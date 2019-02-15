@@ -13,7 +13,6 @@ app.use(history({
   disableDotRule: true,
   verbose: true
 }));
-app.use(staticFileMiddleware);
 app.use(express.static('static'));
 //Serves all the request which includes /images in the url from Images folder
 app.use('/images', express.static(__dirname + '/images'));
