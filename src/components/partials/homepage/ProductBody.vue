@@ -375,8 +375,8 @@
 </template>
 
 <script>
-import { getProducts } from '../../config'
-import { featuredProducts } from '../../config'
+import { getProducts } from '../../../config'
+import { featuredProducts } from '../../../config'
 export default {
     data() {
         return {

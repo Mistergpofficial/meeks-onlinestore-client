@@ -217,11 +217,11 @@
 </template>
 <script>
 import {login} from '../../../helpers/auth';
- import {userRegUrl} from '../../config';
- import {getGroups} from '../../config'
-  import {getCategories} from '../../config'
-  import { getProducts } from '../../config'
-  import { resend } from '../../config'
+ import {userRegUrl} from '../../../config';
+ import {getGroups} from '../../../config'
+  import {getCategories} from '../../../config'
+  import { getProducts } from '../../../config'
+  import { resend } from '../../../config'
 export default {
     data() {
         return {

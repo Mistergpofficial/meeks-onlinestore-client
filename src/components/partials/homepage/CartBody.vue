@@ -137,9 +137,9 @@
 </template>
 
 <script>
- import {getGroups} from '../../config'
-  import {getCategories} from '../../config'
-  import { getProducts } from '../../config'
+ import {getGroups} from '../../../config'
+  import {getCategories} from '../../../config'
+  import { getProducts } from '../../../config'
 export default {
     data() {
         return {

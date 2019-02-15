@@ -94,7 +94,7 @@
 </style>
 
 <script>
-import { addContact } from '../../config'
+import { addContact } from '../../../config'
 export default {
     
     data() {

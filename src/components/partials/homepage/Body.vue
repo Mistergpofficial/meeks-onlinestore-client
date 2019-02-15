@@ -197,7 +197,7 @@
 </template>
 <script>
  import Sidebar from "../../partials/homepage/Sidebar.vue";
- import { getProducts } from '../../config'
+ import { getProducts } from '../../../config'
 export default {
     data() {
         return {

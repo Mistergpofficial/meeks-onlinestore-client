@@ -94,7 +94,7 @@
   import Header from "../partials/Header.vue";
   import Sidebar from '../partials/Sidebar.vue';
   import Footer from '../partials/Footer.vue'
-  import {addGroups} from '../config'
+  import {addGroups} from '../../config'
    
 export default {
     data() {

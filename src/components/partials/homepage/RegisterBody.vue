@@ -119,8 +119,8 @@
 
 
 <script>
- import {regUrl} from '../../config';
- import {resend} from '../../config';
+ import {regUrl} from '../../../config';
+ import {resend} from '../../../config';
 export default {
     data() {
         return {

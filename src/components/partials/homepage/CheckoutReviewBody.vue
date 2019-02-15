@@ -223,10 +223,10 @@
 <script>
 import paystack from 'vue-paystack';
 import {login} from '../../../helpers/auth';
- import {userRegUrl} from '../../config';
- import {update} from '../../config'
- import { payWithPaystack } from '../../config'
- import { payWithoutPaystack } from '../../config'
+ import {userRegUrl} from '../../../config';
+ import {update} from '../../../config'
+ import { payWithPaystack } from '../../../config'
+ import { payWithoutPaystack } from '../../../config'
 export default {
      components: {
         paystack

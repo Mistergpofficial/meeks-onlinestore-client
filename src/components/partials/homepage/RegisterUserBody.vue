@@ -108,8 +108,8 @@
 
 
 <script>
- import {userRegUrl} from '../../config';
- import {resend} from '../../config';
+ import {userRegUrl} from '../../../config';
+ import {resend} from '../../../config';
 export default {
     data() {
         return {

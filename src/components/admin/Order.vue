@@ -114,7 +114,7 @@
   import Header from "../partials/Header.vue";
   import Sidebar from '../partials/Sidebar.vue';
   import Footer from '../partials/Footer.vue'
-  import {allOrders} from '../config'
+  import {allOrders} from '../../config'
 export default {
     data() {
         return {

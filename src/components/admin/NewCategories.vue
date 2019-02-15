@@ -100,7 +100,7 @@
   import Header from "../partials/Header.vue";
   import Sidebar from '../partials/Sidebar.vue';
   import Footer from '../partials/Footer.vue'
-   import {addCategories} from '../config'
+   import {addCategories} from '../../config'
     import {getGroups} from '../../config'
 export default {
     data() {

@@ -44,7 +44,7 @@
 
 
 <script>
- import {regUrl} from '../../config';
+ import {regUrl} from '../../../config';
 export default {
     data() {
         return {

@@ -59,6 +59,9 @@
  import Header from "./partials/homepage/Header.vue";
  import Body from './partials/homepage/Body.vue';
  import Footer from './partials/homepage/Footer.vue'
+  import {getGroups} from '../config'
+  import {getCategories} from '../config'
+  import { getProducts } from '../config'
 export default {
     data() {
         return {
@@ -90,7 +93,7 @@ export default {
     },
     methods: {
         getProducts() {
-            this.$http.get('http://localhost:3000/products')
+            this.$http.get(getProducts)
             .then(response => {
                 this.products = response.data
             })
@@ -99,7 +102,7 @@ export default {
             });
         },
          getGroups() {
-            this.$http.get('http://localhost:3000/groups')
+            this.$http.get(getGroups)
             .then(response => {
                 this.groups = response.data
             })
@@ -108,7 +111,7 @@ export default {
             });
         },
          getCategories() {
-            this.$http.get('http://localhost:3000/categories')
+            this.$http.get(getCategories)
             .then(response => {
                 this.categories = response.data
             })

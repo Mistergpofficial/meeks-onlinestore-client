@@ -182,7 +182,7 @@
 
 
 <script>
-import {getCategories} from '../../config'
+import {getCategories} from '../../../config'
 export default {
     data() {
         return {

@@ -284,8 +284,8 @@
 </style>
 
 <script>
-import { featuredProducts } from '../../config'
-import { productsByCategory } from '../../config'
+import { featuredProducts } from '../../../config'
+import { productsByCategory } from '../../../config'
 export default {
     data() {
         return {
