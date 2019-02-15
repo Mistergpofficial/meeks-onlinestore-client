@@ -136,7 +136,7 @@
                                         <div class="product" v-for="cart in cartCount">
                                                 <div class="product-details">
                                                     <h4 class="product-title">
-                                                        <a href="product.html">{{ cart.name }}</a>
+                                                        <a href="#">{{ cart.name }}</a>
                                                     </h4>
 
                                                     <span class="cart-product-info">

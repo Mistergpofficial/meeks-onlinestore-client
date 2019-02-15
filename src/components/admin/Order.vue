@@ -20,7 +20,7 @@
                                         <ol class="breadcrumb">
                                             <li>
                                                 <i class="fa fa-home"></i>
-                                                <a class="parent-item" href="index.html">Home</a>
+                                                <a class="parent-item" href="/profile">Home</a>
                                                 <i class="fa fa-angle-right"></i>
                                             </li>
                                             <li class="active">
@@ -114,6 +114,7 @@
   import Header from "../partials/Header.vue";
   import Sidebar from '../partials/Sidebar.vue';
   import Footer from '../partials/Footer.vue'
+  import {allOrders} from '../config'
 export default {
     data() {
         return {
@@ -138,11 +139,11 @@ export default {
       logout: function () {
         this.$store.dispatch('logout')
         .then(() => {
-          this.$router.push('/auth/login')
+          this.$router.push({name: 'Login'})
         })
       },
     getOrders() {
-                this.$http.get('http://localhost:3000/orders/all-orders', {
+                this.$http.get(allOrders, {
               headers:{
 						"Authorization":"Bearer "+ this.$store.getters.currentUser.token
 					}

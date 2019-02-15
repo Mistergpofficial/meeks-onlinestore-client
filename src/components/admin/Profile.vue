@@ -18,7 +18,7 @@
                                 <ol class="breadcrumb">
                                     <li>
                                         <i class="fa fa-home"></i>
-                                        <a class="parent-item" href="index.html">Home</a>
+                                        <a class="parent-item" href="/profile">Home</a>
                                         <i class="fa fa-angle-right"></i>
                                     </li>
                                     <li class="active">
@@ -50,10 +50,6 @@
        
     
 </div>
-    <!-- <div>
-        <p>Welcome {{ getID }}</p>
-            <router-link to="/about">About</router-link><span v-if="isLoggedIn"> | <a @click="logout">Logout</a></span>
-    </div> -->
 </template>
 
 

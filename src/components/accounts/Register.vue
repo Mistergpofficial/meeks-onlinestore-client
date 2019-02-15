@@ -16,9 +16,9 @@
             <span class="mobile-menu-close"><i class="icon-cancel"></i></span>
             <nav class="mobile-nav">
                 <ul class="mobile-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>
-                        <a href="category.html">Categories</a>
+                        <a href="#">Categories</a>
                         <ul>
                             <li><a href="category-banner-full-width.html">Full Width Banner</a></li>
                             <li><a href="category-banner-boxed-slider.html">Boxed Slider Banner</a></li>

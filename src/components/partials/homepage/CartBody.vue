@@ -128,7 +128,7 @@
             </div><!-- End .container -->
 
              <div class="container" v-if="cartCount.length < 1">
-               <a :href="`/home`"><img src="/images/cart.jpg"></a>
+               <a :href="`/home`"><img src="/static/images/cart.jpg"></a>
             </div><!-- End .container -->
 
             <div class="mb-6"></div><!-- margin -->
