@@ -9,10 +9,10 @@ const staticFileMiddleware = express.static(__dirname + '/dist');
 //const staticFileMiddleware = express.static(path.join(__dirname + '/dist'));
 
 app.use(staticFileMiddleware);
-app.use(history({
-  disableDotRule: true,
-  verbose: true
-}));
+// app.use(history({
+//   disableDotRule: true,
+//   verbose: true
+// }));
 app.use(express.static('static'));
 //Serves all the request which includes /images in the url from Images folder
 app.use('/images', express.static(__dirname + '/images'));
