@@ -5,19 +5,20 @@ const history = require('connect-history-api-fallback');
 
 
 const app = express();
-const staticFileMiddleware = express.static(__dirname + '/dist');
-//const staticFileMiddleware = express.static(path.join(__dirname + '/dist'));
+//app.use('/', express.static(__dirname + '/dist'));
+const staticFileMiddleware = express.static(path.join(__dirname + '/dist'));
 
 app.use(staticFileMiddleware);
 app.use(history({
   disableDotRule: true,
   verbose: true
 }));
-//app.use(express.static('static'));
+app.use(staticFileMiddleware);
+app.use(express.static('static'));
 //Serves all the request which includes /images in the url from Images folder
-app.use('/images', express.static(__dirname + '/static/images'));
-app.use('/css', express.static(__dirname + '/static/css'));
-app.use('/js', express.static(__dirname + '/static/js'));
+app.use('/images', express.static(__dirname + '/images'));
+app.use('/css', express.static(__dirname + '/css'));
+app.use('/js', express.static(__dirname + '/js'));
 
 
 
