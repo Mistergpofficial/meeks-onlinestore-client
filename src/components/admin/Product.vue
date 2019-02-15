@@ -78,22 +78,22 @@
                                     </div>
                                     
                                     
-                                      <div class="form-group" v-if="groupId === `5c5c8cc81fc68e1930960347`">
+                                      <div class="form-group" v-if="groupId === `5c6714421aa57700172d70a3`">
                                         <label for="collectionName"> Category</label>
                                         <select class="form-control" name="categoryId" v-model="categoryId" >
-                                        <option v-for="category in categories.categoryArray" :value="category._id" v-if="category.groupId === `5c5c8cc81fc68e1930960347`">{{ category.name }}</option>
+                                        <option v-for="category in categories.categoryArray" :value="category._id" v-if="category.groupId === `5c6714421aa57700172d70a3`">{{ category.name }}</option>
                                         </select>
                                     </div v-else>
-                                     <div class="form-group" v-if="groupId === `5c5c8ce81fc68e1930960348`">
+                                     <div class="form-group" v-if="groupId === `5c6744f3770d310017973856`">
                                         <label for="collectionName"> Category</label>
                                         <select class="form-control" name="categoryId" v-model="categoryId" >
-                                             <option v-for="category in categories.categoryArray" :value="category._id" v-if="category.groupId === `5c5c8ce81fc68e1930960348`">{{ category.name }}</option>   
+                                             <option v-for="category in categories.categoryArray" :value="category._id" v-if="category.groupId === `5c6744f3770d310017973856`">{{ category.name }}</option>   
                                         </select>
                                     </div v-else>
-                                      <div class="form-group" v-if="groupId === `5c5c8d201fc68e1930960349`">
+                                      <div class="form-group" v-if="groupId === `5c674511770d310017973858`">
                                         <label for="collectionName"> Category</label>
                                         <select class="form-control" name="categoryId" v-model="categoryId" >
-                                             <option v-for="category in categories.categoryArray" :value="category._id" v-if="category.groupId === `5c5c8d201fc68e1930960349`">{{ category.name }}</option>   
+                                             <option v-for="category in categories.categoryArray" :value="category._id" v-if="category.groupId === `5c674511770d310017973858`">{{ category.name }}</option>   
                                         </select>
                                     </div>
                                    
