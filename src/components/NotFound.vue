@@ -9,9 +9,9 @@
                 <div class="circle">
                     <div class="red">
                         <div class="rotator">
-                            <img src="img/curve.png" alt="">
+                            <img src="images/curve.png" alt="">
                         </div>
-                        <a href="#" class="logo"><img src="img/loading-img.png" alt=""></a>
+                        <a href="#" class="logo"><img src="images/loading-img.png" alt=""></a>
                     </div>
                 </div>
             </div>

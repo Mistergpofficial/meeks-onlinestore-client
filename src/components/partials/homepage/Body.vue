@@ -84,19 +84,19 @@
                             <div class="col-lg-3 col-sm-6">
                                 <div class="banner banner-image">
                                     <a href="#">
-                                        <img src="/static/images/banner-1.jpg" alt="banner">
+                                        <img src="/images/banner-1.jpg" alt="banner">
                                     </a>
                                 </div><!-- End .banner -->
 
                                 <div class="banner banner-image">
                                     <a href="#">
-                                        <img src="/static/images/banner-2.jpg" alt="banner">
+                                        <img src="/images/banner-2.jpg" alt="banner">
                                     </a>
                                 </div><!-- End .banner -->
 
                                 <div class="banner banner-image">
                                     <a href="#">
-                                        <img src="/static/images/banner-3.jpg" alt="banner">
+                                        <img src="/images/banner-3.jpg" alt="banner">
                                     </a>
                                 </div><!-- End .banner -->
                             </div><!-- End .col-lg-3 -->
@@ -104,19 +104,19 @@
                             <div class="col-lg-3 col-sm-6 order-lg-last">
                                 <div class="banner banner-image">
                                     <a href="#">
-                                        <img src="/static/images/banner-4.jpg" alt="banner">
+                                        <img src="/images/banner-4.jpg" alt="banner">
                                     </a>
                                 </div><!-- End .banner -->
 
                                 <div class="banner banner-image">
                                     <a href="#">
-                                        <img src="/static/images/banner-5.jpg" alt="banner">
+                                        <img src="/images/banner-5.jpg" alt="banner">
                                     </a>
                                 </div><!-- End .banner -->
 
                                 <div class="banner banner-image">
                                     <a href="#">
-                                        <img src="/static/images/banner-6.jpg" alt="banner">
+                                        <img src="/images/banner-6.jpg" alt="banner">
                                     </a>
                                 </div><!-- End .banner -->
                             </div><!-- End .col-lg-3 -->
@@ -124,19 +124,19 @@
                             <div class="col-lg-6">
                                 <div class="banner banner-image">
                                     <a href="#">
-                                        <img src="/static/images/banner-7.jpg" alt="banner">
+                                        <img src="/images/banner-7.jpg" alt="banner">
                                     </a>
                                 </div><!-- End .banner -->
 
                                 <div class="banner banner-image">
                                     <a href="#">
-                                        <img src="/static/images/banner-8.jpg" alt="banner">
+                                        <img src="/images/banner-8.jpg" alt="banner">
                                     </a>
                                 </div><!-- End .banner -->
 
                                 <div class="banner banner-image">
                                     <a href="#">
-                                        <img src="/static/images/banner-9.jpg" alt="banner">
+                                        <img src="/images/banner-9.jpg" alt="banner">
                                     </a>
                                 </div><!-- End .banner -->
                             </div><!-- End .col-lg-6 -->
