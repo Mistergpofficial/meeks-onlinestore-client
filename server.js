@@ -5,7 +5,7 @@ var path = require('path');
 
 const app = express();
 
-app.use(express.static(__dirname + './dist'));
+app.use('/', express.static(__dirname + '/dist'));
 app.use(express.static('static'));
 //Serves all the request which includes /images in the url from Images folder
 app.use('/images', express.static(__dirname + '/images'));
