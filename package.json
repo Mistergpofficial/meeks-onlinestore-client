@@ -1,0 +1,52 @@
+{
+  "name": "client",
+  "description": "Shopping Cart Vue.Js Project",
+  "version": "1.0.0",
+  "author": "EHUURIAH CHUKWUDIKE GODSPOWER",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "aws-amplify": "^1.1.19",
+    "aws-amplify-vue": "^0.2.5",
+    "connect-history-api-fallback": "^1.6.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.11",
+    "path": "^0.12.7",
+    "serve-static": "^1.13.2",
+    "vue": "^2.6.3",
+    "vue-error-page": "^1.1.7",
+    "vue-paystack": "^2.0.0",
+    "vue2-google-maps": "^0.10.5",
+    "vuejs-paginator": "^2.0.2",
+    "vuex": "^3.1.0",
+    "vuex-router-sync": "^5.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "devDependencies": {
+    "axios": "^0.17.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.4",
+    "vue-loader": "^13.0.5",
+    "vue-resource": "^1.3.4",
+    "vue-router": "^3.0.2",
+    "vue-template-compiler": "^2.6.3",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}
