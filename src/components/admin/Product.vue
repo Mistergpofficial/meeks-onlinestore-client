@@ -179,7 +179,7 @@ export default {
         isLoggedIn : function(){ return this.$store.getters.currentUser}
        },
      
-      created(){
+      mounted(){
          this.getGroups (); 
          this.getCategories();
         },
