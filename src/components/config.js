@@ -1,4 +1,5 @@
 export const apiDomain = 'https://meeks-clothing-shop.herokuapp.com/'
+//export const apiDomain = 'http://localhost:3000/'
 //export const logoutUrl = apiDomain + 'api/logout'
 //export const loginUrl = apiDomain + 'api/login'
 export const regUrl = apiDomain + 'user/admin-signup'
