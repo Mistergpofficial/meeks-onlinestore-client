@@ -8,18 +8,20 @@ const app = express();
 
 //app.use(express.static('static'));
 //Serves all the request which includes /images in the url from Images folder
-app.use('/images', express.static(__dirname + '/static/images'));
-app.use('/css', express.static(__dirname + '/static/css'));
-app.use('/js', express.static(__dirname + '/static/js'));
-const staticFileMiddleware = express.static(__dirname + '/dist');
+
 
 //const staticFileMiddleware = express.static(path.join(__dirname + '/dist'));
 
+const staticFileMiddleware = express.static(__dirname + '/dist');
 app.use(staticFileMiddleware);
 app.use(history({
   disableDotRule: true,
   verbose: true
 }));
+
+app.use('/images', express.static(__dirname + '/static/images'));
+app.use('/css', express.static(__dirname + '/static/css'));
+app.use('/js', express.static(__dirname + '/static/js'));
 
 
 
