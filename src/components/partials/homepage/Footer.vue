@@ -104,8 +104,9 @@
                 <div class="container">
                     <div class="footer-bottom">
                         <p class="footer-copyright">Meeks Clothing. &copy;  2019.  All Rights Reserved</p>
-
-                        <img src="/static/images/payments.png" alt="payment methods" class="footer-payments">
+                        <img src="/static/images/paystack.png" alt="payment methods" class="footer-payments">&nbsp;&nbsp;
+                        <img src="/static/images/visacard.png" alt="payment methods" class="footer-payments">&nbsp;&nbsp;
+                        <img src="/static/images/mastercard.png" alt="payment methods" class="footer-payments">
                     </div><!-- End .footer-bottom -->
                 </div><!-- End .container -->
             </footer><!-- End .footer -->

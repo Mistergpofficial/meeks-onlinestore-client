@@ -61,7 +61,7 @@
 
                     <div class="header-right">
                         <button class="mobile-menu-toggler" type="button">
-                            <i class="icon-menu"></i>
+                            <i class="fa fa-phone"></i>
                         </button>
                         <div class="header-contact">
                             <span>Call us now</span>
@@ -70,7 +70,7 @@
 
                         <div class="dropdown cart-dropdown">
                             <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                                    <span class="cart-count">{{ cartCount.length }}</span>
+                                    <span class="fa fa-shopping-cart">{{ cartCount.length }}</span>
                             </a>
 
                             <div class="dropdown-menu">
@@ -123,7 +123,7 @@
                         
                     <div class="dropdown cart-dropdown">
                             <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                                <span class="cart-count">{{ cartCount.length }}</span>
+                                <span class="fa fa-shopping-cart">{{ cartCount.length }}</span>
                             </a>
 <!-- <div v-for="cart in cartCount">{{ cart.qty }}</div> -->
                             <div class="dropdown-menu">

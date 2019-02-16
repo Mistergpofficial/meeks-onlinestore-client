@@ -251,7 +251,7 @@
 
 
                                 <div class="product-action">
-                                 <a class="paction add-cart" @click="addToCart(product)"><span>Add to Cart</span></a>
+                                 <a class="fa fa-cart-plus" @click="addToCart(product)"><span>Add to Cart</span></a>
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-details -->
                         </div><!-- End .product -->

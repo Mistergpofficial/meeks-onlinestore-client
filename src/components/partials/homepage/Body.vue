@@ -62,7 +62,7 @@
 
                             <div class="info-box-content">
                                 <h4>ONLINE SUPPORT 24/7</h4>
-                                <p>Lorem ipsum dolor sit amet.</p>
+                                <p>Our support center is open to assist you.</p>
                             </div><!-- End .info-box-content -->
                         </div><!-- End .info-box -->
                     </div><!-- End .container -->
@@ -166,7 +166,7 @@
 
                                         <!-- <router class="paction add-cart" @click="addToCart(product)">Add to Cart</router>
                                        -->
-                                        <a @click="addToCart(product)" class="paction add-cart" title="Add to Cart" disabled="product.quantity === 0">
+                                        <a @click="addToCart(product)" class="fa fa-cart-plus" title="Add to Cart" disabled="product.quantity === 0">
                                             <span>Add to Cart</span>
                                         </a>
 
