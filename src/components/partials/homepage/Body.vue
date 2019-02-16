@@ -154,7 +154,7 @@
                             <div class="product" v-for="product in products.productArray">
                                 <figure class="product-image-container">
                                     <a :href="`/product/${product._id}`" class="product-image">
-                                        <img :src="product.image" alt="product">
+                                        <img :src="product.image" alt="product" height="244px" width="270px">
                                     </a>
                                     <a href="" class="btn-quickview">Quick View</a>
                                 </figure>
@@ -172,9 +172,7 @@
                                     </div><!-- End .price-box -->
 
                                     <div class="product-action">
-                                        <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                            <span>Add to Wishlist</span>
-                                        </a>
+                                       
 
                                         <!-- <router class="paction add-cart" @click="addToCart(product)">Add to Cart</router>
                                        -->
@@ -182,9 +180,7 @@
                                             <span>Add to Cart</span>
                                         </a>
 
-                                        <a href="#" class="paction add-compare" title="Add to Compare">
-                                            <span>Add to Compare</span>
-                                        </a>
+                                        
                                     </div><!-- End .product-action -->
                                 </div><!-- End .product-details -->
                             </div><!-- End .product -->
