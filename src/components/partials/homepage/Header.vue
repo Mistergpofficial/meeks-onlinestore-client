@@ -63,12 +63,12 @@
                         <button class="mobile-menu-toggler" type="button">
                             <i class="fa fa-phone"></i>
                         </button>
-                        <div class="fa fa-phone">
+                        <div class="header-contact">
                             <span>Call us now</span>
                                 <a href="tel:#"><strong>+234 7084756925</strong></a>
                         </div><!-- End .header-contact -->
 
-                        <div class="fa fa-shopping-cart">
+                        <div class="dropdown cart-dropdown">
                             <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                                     <span class="fa fa-shopping-cart">{{ cartCount.length }}</span>
                             </a>

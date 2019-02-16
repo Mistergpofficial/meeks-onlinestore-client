@@ -92,7 +92,7 @@
                                <span></span>
                                          <button @click="decrement(product)">-</button>
                                             </div><!-- End .product-single-qty -->
-                                            <a class="fa fa-cart-plus" @click="addToCart(product)"><span>Add to Cart</span></a>
+                                            <a class="paction add-cart" @click="addToCart(product)"><span>Add to Cart</span></a>
                                         </div><!-- End .product-action -->
 
                                     </div><!-- End .product-single-details -->

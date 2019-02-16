@@ -84,19 +84,10 @@
                                          <button @click="decrement()">-</button>
                                             </div><!-- End .product-single-qty -->
                                             <a class="paction add-cart" @click="addToCart()"><span>Add to Cart</span></a>
-                                            <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                                <span>Add to Wishlist</span>
-                                            </a>
-                                            <a href="#" class="paction add-compare" title="Add to Compare">
-                                                <span>Add to Compare</span>
-                                            </a>
+                                           
                                         </div><!-- End .product-action -->
 
-                                        <div class="product-single-share">
-                                            <label>Share:</label>
-                                            <!-- www.addthis.com share plugin-->
-                                            <div class="addthis_inline_share_toolbox"></div>
-                                        </div><!-- End .product single-share -->
+                                      
                                     </div><!-- End .product-single-details -->
                                 </div><!-- End .col-lg-5 -->
                             </div><!-- End .row -->
@@ -115,10 +106,10 @@
         </nav>
     </div>
 
-     <div class="col-md-4">
+     <!-- <div class="col-md-4">
          Page:{{ pagination.from_page}} - {{ pagination.to_page }}
          Total: {{ pagination.total_page }}
-    </div>
+    </div> -->
 </div>
 
                                <!-- <div class="pagination">
@@ -251,7 +242,7 @@
 
 
                                 <div class="product-action">
-                                 <a class="fa fa-cart-plus" @click="addToCart(product)"><span>Add to Cart</span></a>
+                                 <a class="paction add-cart" @click="addToCart(product)"><span>Add to Cart</span></a>
                                 </div><!-- End .product-action -->
                             </div><!-- End .product-details -->
                         </div><!-- End .product -->
