@@ -70,7 +70,7 @@
 
                         <div class="dropdown cart-dropdown">
                             <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                                    <span class="fa fa-shopping-cart">{{ cartCount.length }}</span>
+                                    <span class="cart-count">{{ cartCount.length }}</span>
                             </a>
 
                             <div class="dropdown-menu">
@@ -171,8 +171,8 @@
                             <li class="active"><a href="/home">Home</a></li>
                            <li class=""><a href="/account/register">Register</a></li>
                            <li class=""><a href="/auth/login">Login</a></li>
-                            <!-- <li class=""><a href="/contact">Contact</a></li>
-                            <li class="float-right"><a href="/auth/login">Login</a></li>
+                             <li class=""><a href="/contact">Contact</a></li>
+                            <!--<li class="float-right"><a href="/auth/login">Login</a></li>
                             <li class="float-right"><a href="/contact">Contact</a></li> -->
                         </ul>
                     </nav>

@@ -166,7 +166,7 @@
 
                                         <!-- <router class="paction add-cart" @click="addToCart(product)">Add to Cart</router>
                                        -->
-                                        <a @click="addToCart(product)" class="fa fa-cart-plus" title="Add to Cart" disabled="product.quantity === 0">
+                                        <a @click="addToCart(product)" class="paction add-cart" title="Add to Cart" disabled="product.quantity === 0">
                                             <span>Add to Cart</span>
                                         </a>
 
