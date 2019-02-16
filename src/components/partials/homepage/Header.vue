@@ -19,12 +19,12 @@
 
                     <div class="header-right">
                          <p class="welcome-msg">Welcome to Meeks Clothing! </p>
-
+                        <li><router-link to="/contact" class="login-link">CONTACT</router-link></li>
                         <div class="header-dropdown dropdown-expanded">
                             <li v-if="isLoggedIn"><span>{{ this.$store.getters.currentUser.full_name  }}</span></li>
                             <li v-if="isLoggedIn"><a @click="logout">Logout</a></li>
                             <li v-else><router-link to="/auth/login">LOG IN</router-link></li>
-                            <li><router-link to="/contact" class="login-link">CONTACT</router-link></li>
+                            
                           
                            
                         </div><!-- End .header-dropown -->

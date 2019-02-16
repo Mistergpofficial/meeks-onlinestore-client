@@ -218,6 +218,7 @@ export default {
                     this.$store.commit('setQuantity', retrievedItem);
                     this.$store.commit('setPrice', retrievedItem);
                     localStorage.setItem('cart', JSON.stringify(cart));
+                    window.reload = '/cart'
             }else{
                     let item = {
                     id: product._id,
@@ -247,6 +248,7 @@ export default {
                     this.$store.commit('setPrice', retrievedItem);
                     //after the cart has been updated, now bring its content to the localstorage
                     localStorage.setItem('cart', JSON.stringify(cart));
+                    window.reload = '/cart'
             }else{
                 alert('Cart is Empty')
                 }
@@ -255,8 +257,8 @@ export default {
                     let array = this.$store.getters.getCart;
                     let google = array.splice(1);
                       //lets write code that will remove every content of the cart
-                      localStorage.removeItem('cart', retrievedItem)
-                      //localStorage.removeItem('cart', cart)
+                     // localStorage.removeItem('cart', retrievedItem)
+                       localStorage.removeItem('cart', cart)
                        localStorage.setItem('cart', JSON.stringify(google))
                       this.$store.commit('setCart', google);
                       window.reload = '/cart'
