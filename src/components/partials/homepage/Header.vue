@@ -22,12 +22,12 @@
 
                         <div class="header-dropdown dropdown-expanded">
                             <a href="#">Links</a>
+                            <li v-if="isLoggedIn"><span>{{ this.$store.getters.currentUser.full_name  }}</span></li>
+                            <li v-if="isLoggedIn"><a @click="logout">Logout</a></li>
+                            <li v-else><router-link to="/auth/login">LOG IN</router-link></li>
                             <div class="header-menu">
                                 <ul>
                                        <li><router-link to="/contact" class="login-link">CONTACT</router-link></li>
-                                        <li v-if="isLoggedIn"><span>{{ this.$store.getters.currentUser.full_name  }}</span></li>
-                                        <li v-if="isLoggedIn"><a @click="logout">Logout</a></li>
-                                        <li v-else><router-link to="/auth/login">LOG IN</router-link></li>
                                 </ul>
                             </div><!-- End .header-menu -->
                         </div><!-- End .header-dropown -->
