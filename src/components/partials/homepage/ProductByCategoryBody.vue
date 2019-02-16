@@ -231,7 +231,7 @@
 
             <div class="featured-section">
                 <div class="container">
-                    <h2 class="carousel-title">Featured Products 11</h2>
+                    <h2 class="carousel-title">Featured Products</h2>
 
                     <div class="featured-products owl-carousel owl-theme owl-dots-top">
                         <div class="product" v-for="product in products">
@@ -242,11 +242,6 @@
                                 <a href="#" class="btn-quickview">Quick View</a>
                             </figure>
                             <div class="product-details">
-                                <div class="ratings-container">
-                                    <div class="product-ratings">
-                                        <span class="ratings" style="width:80%"></span><!-- End .ratings -->
-                                    </div><!-- End .product-ratings -->
-                                </div><!-- End .product-container -->
                                  <h2 class="product-title">
                                         <a :href="`/product/${product.productId}`">{{ product.firstProductName }}</a>
                                     </h2>
@@ -312,8 +307,8 @@ export default {
         this.getFeaturedProducts();
     },
     methods: {
-          getproductByCategory(productsByCategory) {
-                this.$http.get( + this.$route.params.categoryId).then((response) => {
+          getproductByCategory() {
+                this.$http.get(productsByCategory + this.$route.params.categoryId).then((response) => {
                     this.productBycategory = response.data;
                     this.pagination = {
                         current_page: response.meta.current_page,

@@ -169,9 +169,11 @@
                     <nav class="main-nav">
                         <ul class="menu sf-arrows sf-js-enabled" style="touch-action: pan-y;">
                             <li class="active"><a href="/home">Home</a></li>
-                           <li class=""><a href="/home">About</a></li>
-                            <li class="float-right"><a href="">Buy Porto!</a></li>
-                            <li class="float-right"><a href="">Special Offer!</a></li>
+                           <li class=""><a href="/account/register">Register</a></li>
+                           <li class=""><a href="/auth/login">Login</a></li>
+                            <!-- <li class=""><a href="/contact">Contact</a></li>
+                            <li class="float-right"><a href="/auth/login">Login</a></li>
+                            <li class="float-right"><a href="/contact">Contact</a></li> -->
                         </ul>
                     </nav>
                 </div><!-- End .header-bottom -->
