@@ -14,7 +14,7 @@
                                             <span class="contact-info-label">Address:</span>19/21 Town Planning Way Ilupeju Lagos
                                         </li>
                                         <li>
-                                            <span class="contact-info-label">Phone:</span><a href="tel:">(234)708510224</a>
+                                            <span class="contact-info-label">Phone:</span><a href="tel:">(234)7084756925</a>
                                         </li>
                                         <li>
                                             <span class="contact-info-label">Email:</span> <a href="mailto:meeks.clothing@yahoo.com">meeks.clothing@yahoo.com</a>
@@ -104,9 +104,9 @@
                 <div class="container">
                     <div class="footer-bottom">
                         <p class="footer-copyright">Meeks Clothing. &copy;  2019.  All Rights Reserved</p>
-                        <img src="/static/images/paystack.png" alt="payment methods" class="footer-payments">&nbsp;&nbsp;
-                        <img src="/static/images/visacard.png" alt="payment methods" class="footer-payments">&nbsp;&nbsp;
-                        <img src="/static/images/mastercard.png" alt="payment methods" class="footer-payments">
+                        <img src="/static/images/paystack.png" alt="payment methods" class="footer-payments" width="67px" height="36px">&nbsp;&nbsp;
+                        <img src="/static/images/visacard.png" alt="payment methods" class="footer-payments" width="67px" height="36px">&nbsp;&nbsp;
+                        <img src="/static/images/mastercard.png" alt="payment methods" class="footer-payments" width="67px" height="36px">
                     </div><!-- End .footer-bottom -->
                 </div><!-- End .container -->
             </footer><!-- End .footer -->
