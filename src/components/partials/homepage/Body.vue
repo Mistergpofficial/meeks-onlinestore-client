@@ -146,7 +146,7 @@
                                     <a :href="`/product/${product._id}`" class="product-image">
                                         <img :src="product.image" alt="product" width="244px" height="270px">
                                     </a>
-                                    <a href="" class="btn-quickview">Quick View</a>
+                                    <a :href="`/product/${product._id}`" class="btn-quickview">Quick View</a>
                                 </figure>
                                 <div class="product-details">
                                     <div class="ratings-container">
