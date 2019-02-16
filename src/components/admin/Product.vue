@@ -76,6 +76,8 @@
                                 <option v-for="group in groups.groupsArray" :value="group._id">{{ group.name }}</option>
                             </select>
                                     </div>
+
+                                    <p>You selected {{ groupId }} </p>
                                     
                                     
                                       <div class="form-group" v-if="groupId === `5c6714421aa57700172d70a3`">
@@ -179,7 +181,7 @@ export default {
         isLoggedIn : function(){ return this.$store.getters.currentUser}
        },
      
-      mounted(){
+      created(){
          this.getGroups (); 
          this.getCategories();
         },
