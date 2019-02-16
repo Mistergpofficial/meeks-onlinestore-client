@@ -21,15 +21,12 @@
                          <p class="welcome-msg">Welcome to Meeks Clothing! </p>
 
                         <div class="header-dropdown dropdown-expanded">
-                            <a href="#">Links</a>
                             <li v-if="isLoggedIn"><span>{{ this.$store.getters.currentUser.full_name  }}</span></li>
                             <li v-if="isLoggedIn"><a @click="logout">Logout</a></li>
                             <li v-else><router-link to="/auth/login">LOG IN</router-link></li>
-                            <div class="header-menu">
-                                <ul>
-                                       <li><router-link to="/contact" class="login-link">CONTACT</router-link></li>
-                                </ul>
-                            </div><!-- End .header-menu -->
+                            <li><router-link to="/contact" class="login-link">CONTACT</router-link></li>
+                          
+                           
                         </div><!-- End .header-dropown -->
                     </div><!-- End .header-right -->
                 </div><!-- End .container -->
@@ -123,7 +120,7 @@
                         
                     <div class="dropdown cart-dropdown">
                             <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                                <span class="fa fa-shopping-cart">{{ cartCount.length }}</span>
+                                <span class="cart-count">{{ cartCount.length }}</span>
                             </a>
 <!-- <div v-for="cart in cartCount">{{ cart.qty }}</div> -->
                             <div class="dropdown-menu">
