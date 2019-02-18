@@ -158,7 +158,7 @@
                                         <a :href="`/product/${product._id}`">{{ product.name }}</a>
                                     </h2>
                                     <div class="price-box">
-                                        <span class="product-price">${{ product.price }}</span>
+                                        <span class="product-price">N{{ product.price }}</span>
                                     </div><!-- End .price-box -->
 
                                     <div class="product-action">
