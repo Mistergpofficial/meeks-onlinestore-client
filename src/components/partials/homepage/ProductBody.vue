@@ -92,7 +92,7 @@
                                <span></span>
                                          <button @click="decrement(product)">-</button>
                                             </div><!-- End .product-single-qty -->
-                                            <a class="paction add-cart" @click="addToCart(product)"><span>Add to Cart</span></a>
+                                            <a class="paction add-cart" @click="addToBucket(product)"><span>Add to Cart</span></a>
                                         </div><!-- End .product-action -->
 
                                     </div><!-- End .product-single-details -->
@@ -158,16 +158,16 @@
                                 
                                 <div class="widget-body">
                                     <div class="owl-carousel widget-featured-products">
-                                        <div class="featured-col" v-for="product in products">
+                                        <div class="featured-col" v-for="prod in products">
                                             <div class="product product-sm">
                                                 <figure class="product-image-container">
-                                                    <a :href="`/product/category/${product.productId}`" class="product-image">
-                                                        <img :src="product.firstProductImage" alt="product">
+                                                    <a :href="`/product/category/${prod.productId}`" class="product-image">
+                                                        <img :src="prod.firstProductImage" alt="product">
                                                     </a>
                                                 </figure>
                                                 <div class="product-details">
                                                     <h2 class="product-title">
-                                                        <a :href="`/product/category/${product.productId}`">{{ product.firstProductName }}</a>
+                                                        <a :href="`/product/category/${prod.productId}`">{{ prod.firstProductName }}</a>
                                                     </h2>
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
@@ -175,7 +175,7 @@
                                                         </div><!-- End .product-ratings -->
                                                     </div><!-- End .product-container -->
                                                     <div class="price-box">
-                                                        <span class="product-price">N{{ product.firstProductPrice }}</span>
+                                                        <span class="product-price">N{{ prod.firstProductPrice }}</span>
                                                     </div><!-- End .price-box -->
                                                 </div><!-- End .product-details -->
                                             </div><!-- End .product -->
@@ -200,10 +200,10 @@
                     <h2 class="carousel-title">Featured Products</h2>
 
                     <div class="featured-products owl-carousel owl-theme owl-dots-top">
-                        <div class="product" v-for="product in products">
+                        <div class="product" v-for="prod in products">
                             <figure class="product-image-container">
-                                <a :href="`/product/${product.productId}`" class="product-image">
-                                    <img :src="product.firstProductImage" alt="product">
+                                <a :href="`/product/${prod.productId}`" class="product-image">
+                                    <img :src="prod.firstProductImage" alt="product">
                                 </a>
                                 <a href="#" class="btn-quickview">Quick View</a>
                             </figure>
@@ -214,16 +214,14 @@
                                     </div><!-- End .product-ratings -->
                                 </div><!-- End .product-container -->
                                 <h2 class="product-title">
-                                    <a :href="`/product/${product.productId}`">{{ product.firstProductName }}</a>
+                                    <a :href="`/product/${prod.productId}`">{{ prod.firstProductName }}</a>
                                 </h2>
                                 <div class="price-box">
-                                    <span class="product-price">N{{ product.firstProductPrice }}</span>
+                                    <span class="product-price">N{{ prod.firstProductPrice }}</span>
                                 </div><!-- End .price-box -->
 
                                 <div class="product-action">
-                                    
-
-                                    <a class="paction add-cart" @click="addToCart(product)"><span>Add to Cart</span></a>
+                                    <a class="paction add-cart" @click="addToCart(prod)"><span>Add to Cart</span></a>
                                   
 
                                 </div><!-- End .product-action -->
@@ -288,17 +286,17 @@ export default {
             });
         },
         
-           addToCart(product) {
+           addToCart(prod) {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             //for new addition to cart
             if(cart.length === 0){
                 let item = {
-                    id: product.productId,
-                    name: product.firstProductName,
-                    price: product.firstProductPrice,
-                    subtotal: product.firstProductPrice * 1,
+                    id: prod.productId,
+                    name: prod.firstProductName,
+                    price: prod.firstProductPrice,
+                    subtotal: prod.firstProductPrice * 1,
                     qty: 1,
-                    image: product.firstProductImage
+                    image: prod.firstProductImage
                 }
                 cart.push(item);
                 this.$store.commit('setCart', item);
@@ -308,7 +306,7 @@ export default {
             }else{
                 //if it is not a new addition to cart, get the item id that exist already
                 let item = cart.find(item => {
-                    return item.id === product.productId;
+                    return item.id === prod.productId;
                 });
                 // if we got the item already which already is in the cart
                 if(item){
@@ -320,12 +318,12 @@ export default {
                     window.location = '/cart'
                 }else{
                     let item = {
-                     id: product.productId,
-                    name: product.firstProductName,
-                    price: product.firstProductPrice,
-                    subtotal: product.firstProductPrice * 1,
+                     id: prod.productId,
+                    name: prod.firstProductName,
+                    price: prod.firstProductPrice,
+                    subtotal: prod.firstProductPrice * 1,
                     qty: 1,
-                    image: product.firstProductImage
+                    image: prod.firstProductImage
                     };
                     cart.push(item);
                     this.$store.commit('setCart', item);
@@ -333,7 +331,55 @@ export default {
                     window.location = '/cart'
                 }
             }
-       }
+       },
+         addToBucket(product) {
+            //alert('submit')
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            //for new addition to cart
+            if(cart.length === 0){
+                let item = {
+                    id: product._id,
+                    name: product.name,
+                    price: product.price,
+                    subtotal: product.price * 1,
+                    qty: 1,
+                    image: product.image
+                }
+                cart.push(item);
+                localStorage.setItem('cart', item)
+                this.$store.commit('setCart', item);
+                //convert javascript object to string
+                localStorage.setItem('cart', JSON.stringify(cart));
+                window.location = '/'
+            }else{
+                //if it is not a new addition to cart, get the item id that exist already
+                let item = cart.find(item => {
+                    return item.id === product._id;
+                });
+                // if we got the item already which already is in the cart
+                if(item){
+                    item.qty++;
+                    item.subtotal = item.price * item.qty
+                    this.$store.commit('setQuantity', item);
+                    this.$store.commit('setPrice', item);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    window.location = '/'
+                }else{
+                    let item = {
+                        id: product._id,
+                        name: product.name,
+                        price: product.price,
+                        subtotal: product.price * 1,
+                        qty: 1,
+                        image: product.image
+                    };
+                    cart.push(item);
+                    this.$store.commit('setCart', item);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    window.location = '/'
+                }
+            }
+         }
     
     }
 }
