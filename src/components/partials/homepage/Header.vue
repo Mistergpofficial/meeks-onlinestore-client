@@ -77,7 +77,7 @@
                                         <router-link to="/cart"> <i class="fa fa-pie-chart"></i>View Cart</router-link>
                                    </div><!-- End .dropdown-cart-header -->
                                     <div class="dropdown-cart-products">
-                                        <div class="product" v-for="cart in cartCount">
+                                        <div class="product" v-for="(cart, index) in cartCount" :key="cart.id">
                                                 <div class="product-details">
                                                     <h4 class="product-title">
                                                         <a href="product.html">{{ cart.name }}</a>
@@ -93,7 +93,7 @@
                                                     <a href="" class="product-image">
                                                         <img :src="cart.image" alt="product">
                                                     </a>
-                                                    <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
+                                                    <a @click="removeCart(index)" class="btn-remove" title="Remove Product" ><i class="icon-cancel"></i></a>
                                                 </figure>
                                             </div><!-- End .product -->
                                     </div><!-- End .cart-product -->
@@ -130,7 +130,7 @@
                                         <router-link to="/cart"> <i class="fa fa-pie-chart"></i>View Cart</router-link>
                                     </div><!-- End .dropdown-cart-header -->
                                     <div class="dropdown-cart-products">
-                                        <div class="product" v-for="cart in cartCount">
+                                        <div class="product" v-for="(cart, index) in cartCount" :key="cart.id">
                                                 <div class="product-details">
                                                     <h4 class="product-title">
                                                         <a href="#">{{ cart.name }}</a>
@@ -146,7 +146,7 @@
                                                     <a href="" class="product-image">
                                                         <img :src="cart.image" alt="product">
                                                     </a>
-                                                    <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
+                                                    <a @click="removeCart(index)" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
                                                 </figure>
                                             </div><!-- End .product -->
                                     </div><!-- End .cart-product -->
@@ -218,6 +218,11 @@ export default {
         .then(() => {
           this.$router.push({name: 'Login'})
         })
+      },
+      removeCart(index) {
+        this.$delete(this.cartCount, index)
+         localStorage.setItem('cart', JSON.stringify(this.cartCount));
+         alert('Item deleted')
       }
 }
      

@@ -248,21 +248,19 @@ export default {
                     this.$store.commit('setPrice', retrievedItem);
                     //after the cart has been updated, now bring its content to the localstorage
                     localStorage.setItem('cart', JSON.stringify(cart));
-                    window.reload = '/cart'
             }else{
                 alert('Cart is Empty')
                 }
 
                 if(retrievedItem.qty === 0){
-                    let array = this.$store.getters.getCart;
-                    let google = array.splice(1);
-                      //lets write code that will remove every content of the cart
-                     // localStorage.removeItem('cart', retrievedItem)
-                       localStorage.removeItem('cart', cart)
-                       localStorage.setItem('cart', JSON.stringify(google))
-                      this.$store.commit('setCart', google);
-                      window.reload = '/cart'
-
+                   // let array = this.$store.getters.getCart;
+                    for (var i =0; i < this.cartCount.length; i++)
+                    if (this.cartCount[i].qty === 0) {
+                        this.cartCount.splice(i,1);
+                        localStorage.setItem('cart', JSON.stringify(this.cartCount));
+                        break;
+                    }
+            
                 }
         },
 
