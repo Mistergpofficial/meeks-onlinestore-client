@@ -16,6 +16,7 @@
                         <div class="cart-table-container">
                             <table class="table table-cart">
                                 <thead>
+
                                     <tr>
                                         <th class="product-col">Product</th>
                                         <th class="price-col">Price</th>
@@ -79,6 +80,7 @@
 
                         <div class="cart-discount">
                             <h4>Apply Discount Code</h4>
+                            {{ cartCount }}
                             <form action="#">
                                 <div class="input-group">
                                     <input type="text" class="form-control form-control-sm" placeholder="Enter discount code"  required>
