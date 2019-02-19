@@ -9,7 +9,7 @@
                     <div class="row">
                       <div class="col-sm-12 col-md-3">
                         <ul class="links list-unstyled" v-for="product in productsbycategory" :key="product._id">
-                          <li v-if="product.categoryId === category._id"><a :href="`/product/${category._id}`">{{ product.name }}</a></li>
+                          <li v-if="product.categoryId === category._id"><a :href="`/product/${product._id}`">{{ product.name }}</a></li>
                         </ul>
                       </div>
                     </div>
