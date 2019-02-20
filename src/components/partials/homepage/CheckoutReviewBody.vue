@@ -110,10 +110,10 @@
                                </div>
 
                                  <div class="alert alert-warning alert-dismissible fade show" role="alert" v-if="errors.msg">
-		            			{{ errors.msg }}
+                      {{ errors.msg }}
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		            			  <span aria-hidden="true">&times;</span>
-		            			</button>
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                                 </div>
                                   <h2>UPDATE INFORMATION</h2>
                                 <form @submit.prevent="updateUser">
@@ -234,8 +234,8 @@ export default {
     data() {
         return {
             form:{
-				email:'',
-				password:''
+        email:'',
+        password:''
             },
               userData: {
                 full_name : this.$store.state.currentUser.full_name,
@@ -255,7 +255,7 @@ export default {
                      user: this.$store.state.currentUser,
                      cart: this.$store.state.cart,
                 },
-			error:null,
+      error:null,
             products: {},
             groups: {},
             categories: {},
@@ -334,6 +334,7 @@ export default {
                    this.$http.put(payWithPaystack, this.orderDetails)
                    .then(response => {
                        alert('Order Has been placed. Your reference number is ' + this.reference);
+                      localStorage.setItem('cart', JSON.stringify(this.cartCount));
                    })
                    .catch(err => {
                         console.log(err.response.data)
@@ -350,6 +351,7 @@ export default {
                    this.$http.post(payWithoutPaystack, this.orderDetailsWithout)
                    .then(response => {
                        alert('Order Has been placed.');
+                      localStorage.removeItem('cart', JSON.stringify(this.cartCount));
                    })
                    .catch(err => {
                         console.log(err.response)
