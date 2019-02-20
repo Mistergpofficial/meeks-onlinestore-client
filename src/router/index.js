@@ -16,6 +16,7 @@ import Register from '../components/admin/Register.vue'
 import ResetPassword from '../components/admin/ResetPassword.vue'
 import Profile from '../components/admin/Profile.vue'
 import Order from '../components/admin/Order.vue'
+import OrderById from '../components/admin/OrderById.vue'
 import AddCollections from '../components/admin/NewCollection.vue'
 import AddCategories from '../components/admin/NewCategories.vue'
 import AddProduct from '../components/admin/Product.vue'
@@ -115,13 +116,21 @@ const router  = new VueRouter({
            name: 'profile', 
            component: Profile,
            meta:{
-			requiresAuth:true
-		}
+      requiresAuth:true
+    }
         },
         {
             path: '/all-orders', 
             name: 'order', 
             component: Order,
+            meta:{
+             requiresAuth:true
+         }
+         },
+         {
+            path: '/orders/:id', 
+            name: 'orderById', 
+            component: OrderById,
             meta:{
              requiresAuth:true
          }

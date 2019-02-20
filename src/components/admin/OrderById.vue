@@ -12,7 +12,7 @@
                             <div class="row d-flex align-items-center">
                                 <div class="col-md-6">
                                     <div class="page-breadcrumb">
-                                        <h1>Order History</h1>
+                                        <h1>Order Details</h1>
                                     </div>
                                 </div>
                                 <div class="col-md-6 justify-content-end d-flex">
@@ -24,7 +24,7 @@
                                                 <i class="fa fa-angle-right"></i>
                                             </li>
                                             <li class="active">
-                                                Order History
+                                                Order Details
                                             </li>
                                         </ol>
                                     </div>
@@ -40,50 +40,50 @@
                                 <div class="card card-shadow mb-4">
                                     <div class="card-header">
                                         <div class="card-title">
-                                            All Orders
+                                            Order Details
                                         </div>
                                     </div>
                                    <div class="card-body">
                                     <table class="table table-responsive">
                                         <thead>
                                             <tr>
-                                                <th scope="col">Order</th>
-                                                <th scope="col">Purchased</th>
+                                                <th scope="col">Order ID</th>
+                                                <th scope="col">Purchased BY</th>
+                                                <th scope="col">Phone</th>
                                                 <th scope="col">Ship to</th>
                                                 <th scope="col">Date</th>
+                                                <th scope="col">Subtotal</th>
+                                                <th scope="col">Delivery</th>
                                                 <th scope="col">Total</th>
+                                                <th scope="col">Item</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="it in orders.orderArray">
-                                                <td><a>{{ it.id }}</a><p>by {{ it.user.full_name }}<br/>{{ it.user.email }}</p></td>
-                                                <td v-if="it.cart.length === 1">{{ it.cart.length }} item</td>
-                                                <td v-else>{{ it.cart.length }} items</td>
-                                                <td>{{ it.user.address }}, {{ it.user.city }}, {{ it.user.state }}, {{ it.user.country }}</td>
-                                                <td>{{ it.createdAt }}</td>
-                                                <td v-if="it.cart.length > 0" v-for="i in it.cart">{{ i.subtotal}}</td>
-                                                <td><span v-if='it.reference === "PAYMENT ON DELIVERY"'><button class="btn btn-primary" disabled>PAYMENT ON DELIVERY</button></span></td>
-                                                <td><span v-if='it.reference !== "PAYMENT ON DELIVERY"'>{{ it.reference }}</span></td>
-                                                <!-- <td>{{ it.user.state }}</td>
-                                                <td>{{ it.user.city }}</td>
-                                                <td>{{ it.user.address }}</td>
-                                                <td>{{ it.user.phone }}</td>
-                                                <td v-for="i in it.cart">{{ i.id }}<br/> </td>
-                                                <td v-for="i in it.cart">{{ i.name }}</td>
-                                                <td v-for="i in it.cart">{{ i.price }}</td>
-                                                <td v-for="i in it.cart">{{ i.qty }}</td>
-                                                <td><span v-if='it.reference === "PAYMENT ON DELIVERY"'><button class="btn btn-primary" disabled>PAYMENT ON DELIVERY</button></span></td>
-                                                <td><span v-if='it.reference !== "PAYMENT ON DELIVERY"'>{{ it.reference }}</span></td>
-                                                 -->
-                                                <!-- <td>{{ it.cart.name }}</td>
-                                                <td>{{ it.cart }}</td> -->
+                                            <tr>
+                                               <td> {{ order._id }}</td>
+                                               <td>{{ order.user.full_name }} {{ order.user.email }}</td>
+                                               <td>{{ order.user.phone }}</td>
+                                               <td>{{ order.user.address }} {{ order.user.city }} {{ order.user.state }} {{ order.user.country }}</td>
+                                               <td>{{ order.createdAt }}</td>
+                                               <td>N{{ getSubtotal }}</td>
+                                               <td>N1500</td>
+                                               <td>{{ getTotal }}</td>
+                                                <td v-for="car in order.cart">
+                                                   <ul>
+                                                       <ol>
+                                                           <p>{{ car.id }} <br/>{{ car.name }}</p>
+                                                       </ol>
+                                                   </ul>
+                                               </td>
+                                               <td><button @click="deleteOrder" class="btn btn-success">Cancel</button></td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div class="info btn-info" v-if="orders.orderArray.length < 1">
-                                    No Order Placed Yet
+                                       <div class="info btn-info" v-if="order.length < 1">
+                                     Check back later
                                     </div><!-- End .container -->
+                                 
                                     <br/>
                                    </div>
                                 </div>
@@ -104,16 +104,15 @@
 </template>
 
 
-
 <script>
   import Header from "../partials/Header.vue";
   import Sidebar from '../partials/Sidebar.vue';
   import Footer from '../partials/Footer.vue'
-  import {allOrders} from '../../config'
+  import {getOrdersById} from '../../config'
 export default {
     data() {
         return {
-          orders: {},
+          order: {},
         }
     },
      components: {
@@ -123,11 +122,38 @@ export default {
       },
     computed: {
         isLoggedIn : function(){ return this.$store.getters.currentUser},
+        getSubtotal : function()
+         { 
+            let total = [];
+            Object.entries(this.order.cart).forEach(([key, val]) => {
+            total.push(val.subtotal) // the value of the current key.
+            });
+           return total.reduce(function(total, num){ return total + num }, 0);
+         },
+            getTotal(){
+                const delivery = 1500
+                const subtotal = this.getSubtotal
+                const sum = delivery + subtotal
+                return sum;
+            },
+        //      getCartItem: function()
+        //  { 
+        //     let item = [];
+        //     Object.entries(this.order.cart).forEach(([key, val]) => {
+        //     item.push(val.name, val.id) // the value of the current key.
+        //     });
+        //    return this.order.cart.reduce(function(item){ 
+        //        return{
+        //       id:  item.id,
+        //       item:  item.name 
+        //    }
+        //        });
+        //  },
        },
-       created() {
-           this.getOrders();
-           this.getItemName();
+        created() {
+           this.getOrderByID();
            },
+          
       
     
     methods: {
@@ -137,15 +163,31 @@ export default {
           this.$router.push({name: 'Login'})
         })
       },
-    getOrders() {
-                this.$http.get(allOrders, {
-              headers:{
-            "Authorization":"Bearer "+ this.$store.getters.currentUser.token
-          }
-          }).then(response =>{
-              this.orders = response.data
-          })
-        }
+            getOrderByID() {
+                this.$http.get(getOrdersById + this.$route.params.id).then(response => {
+                    this.order = response.data
+                })
+                    .catch((err) => {
+
+                        this.errors = err.data
+
+                    })
+            },
+           deleteOrder() {
+              let shouldDelete = confirm('Are you sure you want to delete this order');
+
+              if (!shouldDelete) return;
+
+              this.$http.delete(getOrdersById + this.$route.params.id, this.order).then(response => {
+                      alert("Successfully Deleted !!");
+                      window.reload = '/all-orders'
+                 //     this.$router.push({name: 'orderById'});
+                  })
+                  .catch(() => {
+                      alert('error', "could not delete !!");
+                  })
+
+          },
     }
 
 }
@@ -163,5 +205,6 @@ export default {
       color: red;  
     }
 </style>
+
 
 
