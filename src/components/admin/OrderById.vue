@@ -77,6 +77,7 @@
                                                    </ul>
                                                </td>
                                                <td><button @click="deleteOrder" class="btn btn-success">Cancel</button></td>
+                                               
                                             </tr>
                                         </tbody>
                                     </table>
@@ -180,8 +181,8 @@ export default {
 
               this.$http.delete(getOrdersById + this.$route.params.id, this.order).then(response => {
                       alert("Successfully Deleted !!");
-                      window.reload = '/all-orders'
-                 //     this.$router.push({name: 'orderById'});
+                     // window.reload = '/all-orders'
+                      this.$router.push({path: '/all-orders'});
                   })
                   .catch(() => {
                       alert('error', "could not delete !!");

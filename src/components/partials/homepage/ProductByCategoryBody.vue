@@ -318,7 +318,7 @@ export default {
             },
 
              getFeaturedProducts() {
-            this.$http.get(featuredProducts)
+            this.$http.get(featuredProducts + this.$route.params.categoryId)
             .then(response => {
                 this.products = response.data
             })

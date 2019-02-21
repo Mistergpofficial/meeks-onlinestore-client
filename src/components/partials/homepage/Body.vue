@@ -8,6 +8,16 @@
                             <div class="col-lg-9">
                                 <div class="home-slider owl-carousel owl-carousel-lazy">
                                     <div class="home-slide">
+                                        <div class="owl-lazy slide-bg" data-src="/static/images/slider/slide-1.jpg"></div>
+                                        <div class="home-slide-content">
+                                            <h3><span>Black Friday Sales</span></h3>
+                                            <h1>MENS FASHION</h1>
+                                            <p>Hurry while stock last!</p>
+                                            <a href="/" class="btn btn-dark">Shop Now</a>
+                                        </div><!-- End .home-slide-content -->
+                                    </div><!-- End .home-slide -->
+
+                                    <div class="home-slide">
                                         <div class="owl-lazy slide-bg" data-src="/static/images/slider/slide-2.jpg"></div>
                                         <div class="home-slide-content">
                                             <h3>OVER <span>200+</span></h3>
@@ -22,7 +32,7 @@
                                         <div class="home-slide-content">
                                             <h3>up to <span>40%</span> off</h3>
                                             <h1>NEW ARRIVALS</h1>
-                                            <p>Starting at $9</p>
+                                            <p>Starting at N15000</p>
                                             <a href="/" class="btn btn-dark">Shop Now</a>
                                         </div><!-- End .home-slide-content -->
                                     </div><!-- End .home-slide -->
@@ -44,7 +54,7 @@
 
                             <div class="info-box-content">
                                 <h4>FREE SHIPPING & RETURN</h4>
-                                <p>Free shipping on all orders over $99.</p>
+                                <p>Free shipping on all orders over N50000.</p>
                             </div><!-- End .info-box-content -->
                         </div><!-- End .info-box -->
 
@@ -166,6 +176,8 @@
 
                                         <!-- <router class="paction add-cart" @click="addToCart(product)">Add to Cart</router>
                                        -->
+                                       <!-- <input @click.prevent="addToCart(product)" type="submit" class="btn btn-primary"  disabled="product.quantity === 0" value="Add to CART">
+                                        -->
                                         <a @click="addToCart(product)" class="paction add-cart" title="Add to Cart" disabled="product.quantity === 0">
                                             <span>Add to Cart</span>
                                         </a>
@@ -226,7 +238,7 @@ export default {
                 this.$store.commit('setCart', item);
                 //convert javascript object to string
                 localStorage.setItem('cart', JSON.stringify(cart));
-                window.location = '/'
+                this.$router.push({path: '/cart'});
             }else{
                 //if it is not a new addition to cart, get the item id that exist already
                 let item = cart.find(item => {
@@ -239,7 +251,7 @@ export default {
                     this.$store.commit('setQuantity', item);
                     this.$store.commit('setPrice', item);
                     localStorage.setItem('cart', JSON.stringify(cart));
-                    window.location = '/'
+                    this.$router.push({path: '/cart'});
                 }else{
                     let item = {
                         id: product._id,
@@ -252,7 +264,7 @@ export default {
                     cart.push(item);
                     this.$store.commit('setCart', item);
                     localStorage.setItem('cart', JSON.stringify(cart));
-                    window.location = '/'
+                    this.$router.push({path: '/cart'});
                 }
             }
         }

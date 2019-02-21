@@ -88,9 +88,7 @@
 
                                         <div class="product-action product-all-icons">
                                             <div class="product-single-qty">
-                                             <button @click="increment(product)">+</button>
-                               <span></span>
-                                         <button @click="decrement(product)">-</button>
+                                      
                                             </div><!-- End .product-single-qty -->
                                             <a class="paction add-cart" @click="addToBucket(product)"><span>Add to Cart</span></a>
                                         </div><!-- End .product-action -->
@@ -161,13 +159,13 @@
                                         <div class="featured-col" v-for="prod in products">
                                             <div class="product product-sm">
                                                 <figure class="product-image-container">
-                                                    <a :href="`/product/category/${prod.productId}`" class="product-image">
+                                                    <a :href="`/product/${prod.productId}`" class="product-image">
                                                         <img :src="prod.firstProductImage" alt="product">
                                                     </a>
                                                 </figure>
                                                 <div class="product-details">
                                                     <h2 class="product-title">
-                                                        <a :href="`/product/category/${prod.productId}`">{{ prod.firstProductName }}</a>
+                                                        <a :href="`/product/${prod.productId}`">{{ prod.firstProductName }}</a>
                                                     </h2>
                                                     <div class="ratings-container">
                                                         <div class="product-ratings">
@@ -277,7 +275,7 @@ export default {
                     })
             },
              getFeaturedProducts() {
-            this.$http.get(featuredProducts)
+            this.$http.get(featuredProducts + this.$route.params.categoryId)
             .then(response => {
                 this.products = response.data
             })
