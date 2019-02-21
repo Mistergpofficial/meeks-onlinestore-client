@@ -81,9 +81,11 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div class="info btn-info" v-if="orders.orderArray && orders.orderArray.length === 0>
+                                 <!--   <div class="info btn-info" v-if="orders.orderArray && orders.orderArray.length === 0>
                                     No Order Placed Yet
-                                    </div><!-- End .container -->
+                                    </div> -->
+
+                                    <!-- End .container -->
                                     <br/>
                                    </div>
                                 </div>
