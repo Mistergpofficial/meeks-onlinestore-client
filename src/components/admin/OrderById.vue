@@ -110,7 +110,7 @@
   import Header from "../partials/Header.vue";
   import Sidebar from '../partials/Sidebar.vue';
   import Footer from '../partials/Footer.vue'
-  import {getOrdersById} from '../../config'
+  import {deleteOrder} from '../../config'
 export default {
     data() {
         return {
@@ -180,7 +180,7 @@ export default {
 
               if (!shouldDelete) return;
 
-              this.$http.post(getOrdersById + this.$route.params.id + '/delete', this.order).then(response => {
+              this.$http.delete(deleteOrder + this.$route.params.id + '/delete', this.order).then(response => {
                       alert("Successfully Deleted !!");
                      // window.reload = '/all-orders'
                       this.$router.push({path: '/all-orders'});
