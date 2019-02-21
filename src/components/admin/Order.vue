@@ -58,11 +58,11 @@
                                         <tbody>
                                             <tr v-for="it in orders.orderArray">
                                                 <td><a :href="`/orders/${it.id}`">{{ it.id }}</a><p>by {{ it.user.full_name }}<br/>{{ it.user.email }}</p></td>
-                                                <td v-if="it.cart.length === 1">{{ it.cart.length }} item</td>
+                                                <td v-if="it.cart && it.cart.length === 1">{{ it.cart.length }} item</td>
                                                 <td v-else>{{ it.cart.length }} items</td>
                                                 <td>{{ it.user.address }}, {{ it.user.city }}, {{ it.user.state }}, {{ it.user.country }}</td>
                                                 <td>{{ it.createdAt }}</td>
-                                                <td v-if="it.cart.length > 0" v-for="i in it.cart">{{ i.subtotal}}</td>
+                                                <td v-if="it.cart && it.cart.length > 0" v-for="i in it.cart">{{ i.subtotal}}</td>
                                                 <td><span v-if='it.reference === "PAYMENT ON DELIVERY"'><button class="btn btn-primary" disabled>PAYMENT ON DELIVERY</button></span></td>
                                                 <td><span v-if='it.reference !== "PAYMENT ON DELIVERY"'>{{ it.reference }}</span></td>
                                                 <!-- <td>{{ it.user.state }}</td>
@@ -81,7 +81,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div class="info btn-info" v-if="orders.orderArray.length < 1">
+                                    <div class="info btn-info" v-if="orders.orderArray && orders.orderArray.length === 0>
                                     No Order Placed Yet
                                     </div><!-- End .container -->
                                     <br/>
