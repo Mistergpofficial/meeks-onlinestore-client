@@ -81,9 +81,10 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                       <div class="info btn-info" v-if="order && order.length === 0>
+                                       <!-- <div class="info btn-info" v-if="order.length < 1">
                                      Check back later
-                                    </div>
+                                    </div> -->
+                                    <!-- End .container -->
                                  
                                     <br/>
                                    </div>
