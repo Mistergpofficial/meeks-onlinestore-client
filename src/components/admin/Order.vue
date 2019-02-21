@@ -57,7 +57,7 @@
                                         </thead>
                                         <tbody>
                                             <tr v-for="it in orders.orderArray">
-                                                <td><a>{{ it.id }}</a><p>by {{ it.user.full_name }}<br/>{{ it.user.email }}</p></td>
+                                                <td><a :href="`/orders/${it.id}`">{{ it.id }}</a><p>by {{ it.user.full_name }}<br/>{{ it.user.email }}</p></td>
                                                 <td v-if="it.cart.length === 1">{{ it.cart.length }} item</td>
                                                 <td v-else>{{ it.cart.length }} items</td>
                                                 <td>{{ it.user.address }}, {{ it.user.city }}, {{ it.user.state }}, {{ it.user.country }}</td>
