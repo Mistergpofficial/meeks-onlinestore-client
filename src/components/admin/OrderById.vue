@@ -181,15 +181,22 @@ export default {
 
               if (!shouldDelete) return;
 
-              this.$http.delete(deleteOrder + this.$route.params.id + '/delete', this.order).then(response => {
-                      alert("Successfully Deleted !!");
+
+            this.$http.delete(deleteOrder + this.$route.params.id + '/delete', this.order, {
+              headers:{
+               'Access-Control-Allow-Origin': '*',
+               'Content-Type': 'application/json',
+          }
+          }).then(response =>{
+                 alert("Successfully Deleted !!");
                      // window.reload = '/all-orders'
                       this.$router.push({path: '/all-orders'});
-                  })
-                  .catch(() => {
+          })
+          .catch(() => {
                       alert('error', "could not delete !!");
                   })
 
+             
           },
     }
 
