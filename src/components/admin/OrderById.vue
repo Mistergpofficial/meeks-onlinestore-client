@@ -180,7 +180,7 @@ export default {
 
               if (!shouldDelete) return;
 
-              this.$http.delete(getOrdersById + this.$route.params.id + '/delete', this.order).then(response => {
+              this.$http.post(getOrdersById + this.$route.params.id + '/delete', this.order).then(response => {
                       alert("Successfully Deleted !!");
                      // window.reload = '/all-orders'
                       this.$router.push({path: '/all-orders'});
