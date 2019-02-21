@@ -300,7 +300,7 @@ export default {
                 this.$store.commit('setCart', item);
                 //convert javascript object to string
                 localStorage.setItem('cart', JSON.stringify(cart));
-                window.location = '/cart'
+               this.$router.push({path: '/cart'});
             }else{
                 //if it is not a new addition to cart, get the item id that exist already
                 let item = cart.find(item => {
@@ -313,7 +313,7 @@ export default {
                     this.$store.commit('setQuantity', item);
                     this.$store.commit('setPrice', item);
                     localStorage.setItem('cart', JSON.stringify(cart));
-                    window.location = '/cart'
+                    this.$router.push({path: '/cart'});
                 }else{
                     let item = {
                      id: prod.productId,
@@ -326,7 +326,7 @@ export default {
                     cart.push(item);
                     this.$store.commit('setCart', item);
                     localStorage.setItem('cart', JSON.stringify(cart));
-                    window.location = '/cart'
+                    this.$router.push({path: '/cart'});
                 }
             }
        },
@@ -348,7 +348,7 @@ export default {
                 this.$store.commit('setCart', item);
                 //convert javascript object to string
                 localStorage.setItem('cart', JSON.stringify(cart));
-                window.location = '/'
+                this.$router.push({path: '/cart'});
             }else{
                 //if it is not a new addition to cart, get the item id that exist already
                 let item = cart.find(item => {
@@ -361,7 +361,7 @@ export default {
                     this.$store.commit('setQuantity', item);
                     this.$store.commit('setPrice', item);
                     localStorage.setItem('cart', JSON.stringify(cart));
-                    window.location = '/'
+                    this.$router.push({path: '/cart'});
                 }else{
                     let item = {
                         id: product._id,
@@ -374,7 +374,7 @@ export default {
                     cart.push(item);
                     this.$store.commit('setCart', item);
                     localStorage.setItem('cart', JSON.stringify(cart));
-                    window.location = '/'
+                    this.$router.push({path: '/cart'});
                 }
             }
          }
