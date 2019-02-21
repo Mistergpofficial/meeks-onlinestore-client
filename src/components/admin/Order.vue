@@ -126,7 +126,6 @@ export default {
        },
        created() {
            this.getOrders();
-           this.getItemName();
            },
       
     
