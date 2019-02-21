@@ -395,7 +395,7 @@ export default {
                     this.$http.post(userRegUrl, this.userData)
                     .then(data => {
                         this.success = true;
-                        this.userData = {};
+                       // this.userData = {};
                         
                        // this.$router.push({name:'Login'})
                         })
