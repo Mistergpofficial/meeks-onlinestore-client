@@ -12,7 +12,7 @@
             <div class="container">
                 <!-- <div id="map"></div> -->
                 <!-- End #map -->
-                {{ name }}
+                
                 <div id="map"></div>
 
                 <div class="row">

@@ -5,6 +5,8 @@ import store from '../vuex/store'
 
 import Home from '../components/Home.vue'
 import Contact from '../components/Contact.vue'
+import OrderHistory from '../components/OrderHistory.vue'
+import CancelOrder from '../components/CancelOrder.vue'
 import Cart from '../components/Cart.vue'
 import Checkout from '../components/Checkout.vue'
 import CheckoutReview from '../components/CheckoutReview.vue'
@@ -52,6 +54,23 @@ const router  = new VueRouter({
                 guest: true
             }
           },
+           {
+              path: '/order-history',
+              name: 'OrderHistory',
+              component: OrderHistory,
+              meta: {
+                  guest: true
+              }
+          },
+          
+          {
+            path: '/order-cancelled',
+            name: 'CancelOrder',
+            component: CancelOrder,
+            meta: {
+                guest: true
+            }
+        },
           {
             path: '/cart',
             name: 'Cart',

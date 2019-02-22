@@ -186,7 +186,11 @@
 
 
 <div class="clearfix">
-        <button v-if="paymentMethod === 'Pay On Delivery'" class="btn btn-primary float-right" @click="orderWithout">Place Order</button>
+    <input type="hidden" name="cart" v-model="orderDetailsWithout.cart"> 
+    <input type="hidden" name="user"  v-model="orderDetailsWithout.user"> 
+    <input type="hidden" name="status" v-model="orderDetailsWithout.cart"> 
+    <input type="hidden" name="email"  v-model="orderDetailsWithout.email"> 
+    <button v-if="paymentMethod === 'Pay On Delivery'" class="btn btn-primary float-right" @click="orderWithout">Place Order</button>
 </div>
 
 <div class="clearfix">
@@ -203,12 +207,12 @@
        <i class="fas fa-money-bill-alt"></i>
        <span class="btn btn-primary float-right">Place Order</span>
     </paystack>
+     <input type="hidden" name="cart" v-model="orderDetails.cart"> 
+    <input type="hidden" name="reference" v-model="orderDetails.reference"> 
+    <input type="hidden" name="user"  v-model="orderDetails.user"> 
+    <input type="hidden" name="status" v-model="orderDetails.status">
+    <input type="hidden" name="email1"  v-model="orderDetails.email1">  
 </div>
-
-  <input type="hidden" name="cart" v-model="orderDetailsWithout.cart"> 
-  <input type="hidden" name="reference" v-model="orderDetails.reference"> 
-<input type="hidden" name="user"  v-model="orderDetailsWithout.user"> 
-                      
 
                             
                         </div><!-- End .checkout-discount -->
@@ -249,11 +253,15 @@ export default {
                 orderDetails: {
                      user: this.$store.state.currentUser,
                      cart: this.$store.state.cart,
-                     reference: this.reference
+                     reference: this.reference,
+                     status: 'ORDERED',
+                     email1: this.$store.state.currentUser.email
                 },
                  orderDetailsWithout: {
                      user: this.$store.state.currentUser,
                      cart: this.$store.state.cart,
+                     status: 'ORDERED',
+                     email: this.$store.state.currentUser.email
                 },
 			error:null,
             products: {},

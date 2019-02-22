@@ -150,7 +150,7 @@
                                                 <td>Flat Rate</td>
                                             </tr>
 
-                                            {{ sum }}
+                                        
                                         
                                             <!-- <tr>
                                                 <td><input type="radio" name="shippingMethod" v-model="shippingMethod" v-bind:value="'1500'"></td>

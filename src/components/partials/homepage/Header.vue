@@ -9,7 +9,7 @@
 
 
                         <div class="dropdown compare-dropdown">
-                            <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                            <a href="/order-history">
                                 <i class="icon-retweet"></i>Order History
                             </a>
 
