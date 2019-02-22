@@ -167,7 +167,7 @@ export default {
         })
       },
             getOrderByID() {
-                this.$http.get(getOrdersById + this.$route.params.id).then(response => {
+                 this.$http.delete(getOrdersById + this.order._id, this.order).then(response => {
                     this.order = response.data
                 })
                     .catch((err) => {
@@ -182,17 +182,12 @@ export default {
               if (!shouldDelete) return;
 
 
-            this.$http.delete(deleteOrder + this.$route.params.id + '/delete', this.order, {
-              headers:{
-               'Access-Control-Allow-Origin': '*',
-               'Content-Type': 'application/json',
-          }
-          }).then(response =>{
-                 alert("Successfully Deleted !!");
+             this.$http.delete(deleteOrder + this.order._id, this.order).then(response => {
+                      alert("Successfully Deleted !!");
                      // window.reload = '/all-orders'
                       this.$router.push({path: '/all-orders'});
-          })
-          .catch(() => {
+                  })
+                  .catch(() => {
                       alert('error', "could not delete !!");
                   })
 
