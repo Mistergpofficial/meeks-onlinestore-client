@@ -62,11 +62,11 @@
                                         <tbody>
                                             <tr>
                                                <td> {{ order._id }}</td>
-                                               <td>{{ order.user }} {{ order.user }}</td>
-                                              <!-- <td>{{ order.user.phone }}</td> -->
-                                              <!-- <td>{{ order.user.address }} {{ order.user.city }} {{ order.user.state }} {{ order.user.country }}</td>-->
+                                               <td>{{ order.user.full_name }} {{ order.user.email }}</td>
+                                               <td>{{ order.user.phone }}</td>
+                                               <td>{{ order.user.address }} {{ order.user.city }} {{ order.user.state }} {{ order.user.country }}</td>
                                                <td>{{ order.createdAt }}</td>
-                                               <!--<td>N{{ getSubtotal }}</td> -->
+                                               <td>N{{ getSubtotal }}</td>
                                                <td>N1500</td>
                                                <td>{{ getTotal }}</td>
                                                 <td v-for="car in order.cart">
@@ -111,7 +111,7 @@
   import Sidebar from '../partials/Sidebar.vue';
   import Footer from '../partials/Footer.vue'
   import {getOrdersById} from '../../config'
-  import {deleteOrder} from '../../config'
+   import {deleteOrder} from '../../config'
 export default {
     data() {
         return {
@@ -167,7 +167,7 @@ export default {
         })
       },
             getOrderByID() {
-                 this.$http.delete(getOrdersById + this.$route.params.id, this.order).then(response => {
+                this.$http.get(getOrdersById + this.$route.params.id).then(response => {
                     this.order = response.data
                 })
                     .catch((err) => {
@@ -176,13 +176,12 @@ export default {
 
                     })
             },
-           deleteOrder(order) {
+           deleteOrder(car) {
               let shouldDelete = confirm('Are you sure you want to delete this order');
 
               if (!shouldDelete) return;
-
-
-             this.$http.delete(deleteOrder + this.order._id, this.order).then(response => {
+//this.$route.params.id
+              this.$http.delete(deleteOrder + this.order._id, this.order).then(response => {
                       alert("Successfully Deleted !!");
                      // window.reload = '/all-orders'
                       this.$router.push({path: '/all-orders'});
@@ -191,7 +190,6 @@ export default {
                       alert('error', "could not delete !!");
                   })
 
-             
           },
     }
 
