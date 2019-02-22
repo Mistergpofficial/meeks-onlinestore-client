@@ -66,7 +66,7 @@
                                               <!-- <td>{{ order.user.phone }}</td> -->
                                               <!-- <td>{{ order.user.address }} {{ order.user.city }} {{ order.user.state }} {{ order.user.country }}</td>-->
                                                <td>{{ order.createdAt }}</td>
-                                               <td>N{{ getSubtotal }}</td>
+                                               <!--<td>N{{ getSubtotal }}</td> -->
                                                <td>N1500</td>
                                                <td>{{ getTotal }}</td>
                                                 <td v-for="car in order.cart">
