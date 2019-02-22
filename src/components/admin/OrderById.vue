@@ -62,9 +62,9 @@
                                         <tbody>
                                             <tr>
                                                <td> {{ order._id }}</td>
-                                               <td>{{ order.user.full_name }} {{ order.user.email }}</td>
+                                               <td>{{ order.user }} {{ order.user }}</td>
                                                <td>{{ order.user.phone }}</td>
-                                               <td>{{ order.user.address }} {{ order.user.city }} {{ order.user.state }} {{ order.user.country }}</td>
+                                              <!-- <td>{{ order.user.address }} {{ order.user.city }} {{ order.user.state }} {{ order.user.country }}</td>-->
                                                <td>{{ order.createdAt }}</td>
                                                <td>N{{ getSubtotal }}</td>
                                                <td>N1500</td>
