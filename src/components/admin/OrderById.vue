@@ -76,7 +76,7 @@
                                                        </ol>
                                                    </ul>
                                                </td>
-                                               <td><button @click="deleteOrder" class="btn btn-success">Cancel</button></td>
+                                               <td><button @click="deleteOrder(order)" class="btn btn-success">Cancel</button></td>
                                                
                                             </tr>
                                         </tbody>
@@ -176,7 +176,7 @@ export default {
 
                     })
             },
-           deleteOrder() {
+           deleteOrder(order) {
               let shouldDelete = confirm('Are you sure you want to delete this order');
 
               if (!shouldDelete) return;
