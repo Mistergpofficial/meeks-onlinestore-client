@@ -167,7 +167,7 @@ export default {
         })
       },
             getOrderByID() {
-                 this.$http.delete(getOrdersById + this.order._id, this.order).then(response => {
+                 this.$http.delete(getOrdersById + this.$route.params.id, this.order).then(response => {
                     this.order = response.data
                 })
                     .catch((err) => {
